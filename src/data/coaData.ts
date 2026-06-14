@@ -122,7 +122,7 @@ export const coaDatabase: Record<string, COAData> = {
         status: 'PASS',
       },
     ],
-    pdfUrl: '/manus-storage/retatrutide_coa_ff6c734b.pdf',
+    pdfUrl: 'https://drive.google.com/file/d/11BkbgDMzPCKPgfC9rt3b2lKU1dqiyeXM/view?usp=drivesdk',
     verificationBadges: {
       thirdPartyVerified: true,
       batchSpecificTesting: true,
