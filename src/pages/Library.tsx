@@ -163,10 +163,10 @@ export default function Library() {
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex flex-nowrap md:flex-wrap gap-2 mt-4 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 scrollbar-hide">
             <button
               onClick={() => setActiveFilter(ALL)}
-              className={`text-xs font-mono px-3 py-1.5 rounded-full border transition-all ${
+              className={`text-xs font-mono px-3 py-1.5 rounded-full border transition-all whitespace-nowrap flex-shrink-0 ${
                 activeFilter === ALL
                   ? 'bg-white/10 border-white/30 text-white'
                   : 'border-white/10 text-white/40 hover:border-white/30'
@@ -180,7 +180,7 @@ export default function Library() {
                 <button
                   key={cat}
                   onClick={() => setActiveFilter(cat)}
-                  className={`text-xs font-mono px-3 py-1.5 rounded-full border transition-all ${
+                  className={`text-xs font-mono px-3 py-1.5 rounded-full border transition-all whitespace-nowrap flex-shrink-0 ${
                     activeFilter === cat
                       ? `${CATEGORY_COLORS[cat]} border-current`
                       : 'border-white/10 text-white/40 hover:border-white/30'
