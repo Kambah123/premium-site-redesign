@@ -4,6 +4,8 @@ import Navbar from '../sections/Navbar';
 import Footer from '../sections/Footer';
 import WhatsAppFloat from '../sections/WhatsAppFloat';
 import { getProductById, getRelatedProducts, CATEGORY_COLORS } from '../data/products';
+import COASection from '../components/COASection';
+import { getCOAByProductId } from '../data/coaData';
 
 const WHATSAPP_URL =
   "https://wa.me/61489995818??text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides.";
@@ -184,6 +186,16 @@ export default function ProductDetail() {
                   ))}
                 </ul>
               </div>
+
+              {/* Certificate of Analysis Section */}
+              {(() => {
+                const coa = getCOAByProductId(product.id);
+                return coa ? (
+                  <div className="bg-slate-800/20 border border-slate-700/30 rounded-xl p-6">
+                    <COASection coa={coa} />
+                  </div>
+                ) : null;
+              })()}
             </div>
 
             {/* Sidebar */}
