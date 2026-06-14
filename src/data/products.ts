@@ -50,15 +50,15 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const CATEGORY_COLORS: Record<Category, string> = {
-  'Featured': 'bg-gold-500/20 text-gold-400 border-gold-500/30',
-  'Weight Management & Metabolic': 'bg-blue-500/20 text-blue-300 border-blue-500/30',
-  'Tissue Regeneration & Recovery': 'bg-green-500/20 text-green-300 border-green-500/30',
-  'Cognitive & Neurological': 'bg-purple-500/20 text-purple-300 border-purple-500/30',
-  'Immune & Systemic Support': 'bg-orange-500/20 text-orange-300 border-orange-500/30',
-  'Appearance & Skin Health': 'bg-pink-500/20 text-pink-300 border-pink-500/30',
-  'Metabolic & Cellular Health': 'bg-teal-500/20 text-teal-300 border-teal-500/30',
-  'Specialized Blends': 'bg-gold-500/20 text-gold-400 border-gold-500/30',
-  'Supportive Products': 'bg-gray-500/20 text-gray-300 border-gray-500/30',
+  'Featured': 'bg-gold-50 text-gold-700 border-gold-200',
+  'Weight Management & Metabolic': 'bg-blue-50 text-blue-700 border-blue-200',
+  'Tissue Regeneration & Recovery': 'bg-green-50 text-green-700 border-green-200',
+  'Cognitive & Neurological': 'bg-purple-50 text-purple-700 border-purple-200',
+  'Immune & Systemic Support': 'bg-orange-50 text-orange-700 border-orange-200',
+  'Appearance & Skin Health': 'bg-pink-50 text-pink-700 border-pink-200',
+  'Metabolic & Cellular Health': 'bg-teal-50 text-teal-700 border-teal-200',
+  'Specialized Blends': 'bg-gold-50 text-gold-700 border-gold-200',
+  'Supportive Products': 'bg-gray-50 text-gray-700 border-gray-200',
 };
 
 export const products: Product[] = [

@@ -53,6 +53,17 @@ module.exports = {
           pure: '#FFFFFF',
           dark: '#080A0F',
         },
+        pearl: {
+          DEFAULT: '#FDFCF0',
+          white: '#FCFBF4',
+          shimmer: '#F4F1EA',
+        },
+        premium: {
+          navy: '#001F3F',
+          gold: '#D4AF37',
+          dark: '#1A1A1A',
+          muted: '#666666',
+        },
       },
       fontFamily: {
         sans: ['Space Grotesk', 'sans-serif'],

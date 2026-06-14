@@ -20,69 +20,69 @@ export default function COASection({ coa }: COASectionProps) {
         {/* Section Header */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <FileText size={20} className="text-emerald-400" />
-            <h2 className="text-white text-2xl font-semibold">Certificate of Analysis (COA)</h2>
+            <FileText size={20} className="text-gold-600" />
+            <h2 className="text-navy-900 text-2xl font-semibold">Certificate of Analysis (COA)</h2>
           </div>
-          <div className="w-12 h-px bg-emerald-500/30" />
+          <div className="w-12 h-px bg-gold-500/30" />
         </div>
 
         {/* Verification Badges */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="bg-slate-800/40 border border-emerald-500/30 rounded-xl p-4 hover:border-emerald-500/60 transition-colors">
+          <div className="bg-pearl-shimmer/30 border border-gold-500/20 rounded-xl p-4 hover:border-gold-500/40 transition-colors">
             <div className="flex items-start gap-3">
-              <div className="p-2 bg-emerald-500/20 rounded-lg">
-                <CheckCircle2 size={20} className="text-emerald-400" />
+              <div className="p-2 bg-gold-500/10 rounded-lg">
+                <CheckCircle2 size={20} className="text-gold-600" />
               </div>
               <div>
-                <p className="text-white text-sm font-semibold">Third-Party Laboratory Verified</p>
-                <p className="text-slate-400 text-xs mt-1">Independently tested by {coa.laboratory}</p>
+                <p className="text-navy-900 text-sm font-semibold">Third-Party Laboratory Verified</p>
+                <p className="text-navy-900/40 text-xs mt-1">Independently tested by {coa.laboratory}</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-slate-800/40 border border-emerald-500/30 rounded-xl p-4 hover:border-emerald-500/60 transition-colors">
+          <div className="bg-pearl-shimmer/30 border border-gold-500/20 rounded-xl p-4 hover:border-gold-500/40 transition-colors">
             <div className="flex items-start gap-3">
-              <div className="p-2 bg-emerald-500/20 rounded-lg">
-                <TestTube size={20} className="text-emerald-400" />
+              <div className="p-2 bg-gold-500/10 rounded-lg">
+                <TestTube size={20} className="text-gold-600" />
               </div>
               <div>
-                <p className="text-white text-sm font-semibold">Batch Specific Testing</p>
-                <p className="text-slate-400 text-xs mt-1">Lot {coa.lotNumber} tested individually</p>
+                <p className="text-navy-900 text-sm font-semibold">Batch Specific Testing</p>
+                <p className="text-navy-900/40 text-xs mt-1">Lot {coa.lotNumber} tested individually</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-slate-800/40 border border-emerald-500/30 rounded-xl p-4 hover:border-emerald-500/60 transition-colors">
+          <div className="bg-pearl-shimmer/30 border border-gold-500/20 rounded-xl p-4 hover:border-gold-500/40 transition-colors">
             <div className="flex items-start gap-3">
-              <div className="p-2 bg-emerald-500/20 rounded-lg">
-                <Award size={20} className="text-emerald-400" />
+              <div className="p-2 bg-gold-500/10 rounded-lg">
+                <Award size={20} className="text-gold-600" />
               </div>
               <div>
-                <p className="text-white text-sm font-semibold">Certificate Available</p>
-                <p className="text-slate-400 text-xs mt-1">Official PDF available for download</p>
+                <p className="text-navy-900 text-sm font-semibold">Certificate Available</p>
+                <p className="text-navy-900/40 text-xs mt-1">Official PDF available for download</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Quick Stats */}
-        <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-xl p-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="bg-navy-900 rounded-2xl p-6 shadow-xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div>
-              <p className="text-slate-400 text-xs font-mono uppercase tracking-wider mb-1">Purity (HPLC)</p>
-              <p className="text-emerald-400 text-lg font-bold">{coa.purityHPLC}</p>
+              <p className="text-white/40 text-[10px] font-mono uppercase tracking-wider mb-1">Purity (HPLC)</p>
+              <p className="text-gold-400 text-xl font-bold">{coa.purityHPLC}</p>
             </div>
             <div>
-              <p className="text-slate-400 text-xs font-mono uppercase tracking-wider mb-1">Potency</p>
-              <p className="text-emerald-400 text-lg font-bold">104.5%</p>
+              <p className="text-white/40 text-[10px] font-mono uppercase tracking-wider mb-1">Potency</p>
+              <p className="text-gold-400 text-xl font-bold">104.5%</p>
             </div>
             <div>
-              <p className="text-slate-400 text-xs font-mono uppercase tracking-wider mb-1">Lot Number</p>
-              <p className="text-emerald-400 text-lg font-bold">{coa.lotNumber}</p>
+              <p className="text-white/40 text-[10px] font-mono uppercase tracking-wider mb-1">Lot Number</p>
+              <p className="text-gold-400 text-xl font-bold">{coa.lotNumber}</p>
             </div>
             <div>
-              <p className="text-slate-400 text-xs font-mono uppercase tracking-wider mb-1">Test Date</p>
-              <p className="text-emerald-400 text-lg font-bold">{coa.testDate}</p>
+              <p className="text-white/40 text-[10px] font-mono uppercase tracking-wider mb-1">Test Date</p>
+              <p className="text-gold-400 text-xl font-bold">{coa.testDate}</p>
             </div>
           </div>
         </div>
@@ -91,13 +91,13 @@ export default function COASection({ coa }: COASectionProps) {
         <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="flex-1 px-6 py-3 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 border border-emerald-500/50 rounded-lg transition-all font-medium text-sm"
+            className="flex-1 px-6 py-4 bg-navy-900 text-white rounded-xl hover:bg-navy-800 transition-all font-bold text-sm shadow-lg"
           >
             View Results
           </button>
           <button
             onClick={handleViewPDF}
-            className="flex-1 px-6 py-3 bg-slate-700/30 hover:bg-slate-700/50 text-slate-300 border border-slate-600/50 rounded-lg transition-all font-medium text-sm"
+            className="flex-1 px-6 py-4 bg-white text-navy-900 border border-navy-900/10 rounded-xl hover:bg-pearl-shimmer transition-all font-bold text-sm shadow-sm"
           >
             View Full COA
           </button>
