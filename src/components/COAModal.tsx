@@ -1,4 +1,4 @@
-import { X, Download, ExternalLink } from 'lucide-react';
+import { X, Download } from 'lucide-react';
 import COAResultsCard from './COAResultsCard';
 import type { COAData } from '../data/coaData';
 
