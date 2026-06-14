@@ -167,7 +167,7 @@ export default function Footer() {
             </a>
             <div className="mt-4">
               <a
-                href="https://wa.me/?text=Hi%2C%20I'm%20interested%20in%20Biogenix%20Labs%20peptides."
+                href="https://wa.me/61489995818??text=Hi%2C%20I'm%20interested%20in%20Biogenix%20Labs%20peptides."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white/60 hover:text-gold-400 text-sm transition-colors"

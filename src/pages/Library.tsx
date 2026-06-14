@@ -12,7 +12,7 @@ import {
 } from '../data/products';
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides.";
+  "https://wa.me/61489995818??text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides.";
 
 const ALL = 'All' as const;
 type Filter = typeof ALL | Category;

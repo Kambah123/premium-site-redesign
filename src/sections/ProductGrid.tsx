@@ -119,7 +119,7 @@ function ProductCard({
               </svg>
             </Link>
             <a
-              href="https://wa.me/?text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides."
+              href="https://wa.me/61489995818??text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides."
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/30 hover:text-gold-400 transition-colors"
