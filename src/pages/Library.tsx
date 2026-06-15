@@ -221,6 +221,19 @@ export default function Library() {
                   to={`/products/${product.id}`}
                   className="group bg-navy-900/30 border border-white/5 hover:border-gold-500/30 rounded-xl p-5 transition-all duration-300 hover:shadow-gold flex flex-col"
                 >
+                  {/* Image */}
+                  <div className="aspect-[4/3] rounded-xl bg-white/5 mb-5 overflow-hidden flex items-center justify-center p-4 relative">
+                    {product.image ? (
+                      <img
+                        src={product.image}
+                        alt={`${product.name} ${product.dosage}`}
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      />
+                    ) : (
+                      <FlaskConical size={40} className="text-gold-500/20" />
+                    )}
+                  </div>
+
                   {/* Category + Badge */}
                   <div className="flex items-center justify-between mb-3">
                     <span className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full border ${CATEGORY_COLORS[product.category]}`}>
