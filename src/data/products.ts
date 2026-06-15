@@ -1070,7 +1070,7 @@ export const products: Product[] = [
   {
     id: 'wolverine-stack',
     name: 'Wolverine Stack',
-    dosage: 'BPC-157 (10mg) + TB-500 (10mg)',
+    dosage: 'BPC-157 + TB-500',
     category: 'Specialized Blends',
     tagline: 'Combined tissue repair stack for comprehensive recovery research',
     description:
@@ -1093,7 +1093,7 @@ export const products: Product[] = [
       'Multi-tissue recovery model investigations',
     ],
     specifications: [
-      { label: 'Components', value: 'BPC-157 (10mg) + TB-500 (10mg)' },
+      { label: 'Components', value: 'BPC-157 + TB-500' },
       { label: 'Purity (each)', value: '≥99% (HPLC verified)' },
       { label: 'Form', value: 'Lyophilized powder (separate vials)' },
       { label: 'Storage', value: '-20°C (long-term)' },
@@ -1103,7 +1103,7 @@ export const products: Product[] = [
   {
     id: 'growth-stack',
     name: 'Growth Stack',
-    dosage: 'CJC-1295 (2mg) + Ipamorelin (2mg)',
+    dosage: 'CJC-1295 + Ipamorelin',
     category: 'Specialized Blends',
     tagline: 'GHRH/GHRP synergy stack for GH axis research',
     description:
@@ -1126,7 +1126,7 @@ export const products: Product[] = [
       'Body composition mechanistic research',
     ],
     specifications: [
-      { label: 'Components', value: 'CJC-1295 no DAC (2mg) + Ipamorelin (2mg)' },
+      { label: 'Components', value: 'CJC-1295 no DAC + Ipamorelin' },
       { label: 'Purity (each)', value: '≥98% (HPLC verified)' },
       { label: 'Form', value: 'Lyophilized powder (separate vials)' },
       { label: 'Storage', value: '-20°C (long-term)' },
@@ -1136,7 +1136,7 @@ export const products: Product[] = [
   {
     id: 'glow-stack',
     name: 'Glow',
-    dosage: 'TB-500 (10mg) + BPC-157 (10mg) + GHK-Cu (50mg)',
+    dosage: 'TB-500 + BPC-157 + GHK-Cu',
     category: 'Specialized Blends',
     tagline: 'Regenerative skin and systemic repair stack',
     description:
@@ -1159,7 +1159,7 @@ export const products: Product[] = [
       'Wound healing combination protocols',
     ],
     specifications: [
-      { label: 'Components', value: 'TB-500 (10mg) + BPC-157 (10mg) + GHK-Cu (50mg)' },
+      { label: 'Components', value: 'TB-500 + BPC-157 + GHK-Cu' },
       { label: 'Purity (each)', value: '≥98% (HPLC verified)' },
       { label: 'Form', value: 'Lyophilized powder (separate vials)' },
       { label: 'Storage', value: '-20°C (long-term)' },
@@ -1169,7 +1169,7 @@ export const products: Product[] = [
   {
     id: 'klow-stack',
     name: 'Klow',
-    dosage: 'TB-500 (10mg) + BPC-157 (10mg) + GHK-Cu (50mg) + KPV (10mg)',
+    dosage: 'TB-500 + BPC-157 + GHK-Cu + KPV',
     category: 'Specialized Blends',
     tagline: 'Extended regenerative stack with anti-inflammatory support',
     description:
@@ -1191,7 +1191,7 @@ export const products: Product[] = [
       'Comprehensive skin and systemic recovery research',
     ],
     specifications: [
-      { label: 'Components', value: 'TB-500 (10mg) + BPC-157 (10mg) + GHK-Cu (50mg) + KPV (10mg)' },
+      { label: 'Components', value: 'TB-500 + BPC-157 + GHK-Cu + KPV' },
       { label: 'Purity (each)', value: '≥98% (HPLC verified)' },
       { label: 'Form', value: 'Lyophilized powder (separate vials)' },
       { label: 'Storage', value: '-20°C (long-term)' },
