@@ -1063,6 +1063,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months' },
     ],
     relatedIds: ['mots-c', 'aod-9604', 'epithalon'],
+    image: '/images/products/retatrutide_10mg.webp',
   },
 
   // ── SPECIALIZED BLENDS ─────────────────────────────────────────────────────
