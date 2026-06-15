@@ -90,7 +90,6 @@ function ProductCard({
               <h3 className="text-white text-lg font-semibold group-hover:text-gold-400 transition-colors">
                 {product.name}
               </h3>
-              <span className="text-gold-500 text-sm font-mono">{product.dosage}</span>
             </div>
             <span className="bg-white/5 text-white/50 text-[10px] font-mono tracking-wider uppercase px-2 py-1 rounded-full border border-white/10">
               Research
