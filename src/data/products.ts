@@ -322,6 +322,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['semaglutide', 'retatrutide', 'aod-9604', 'cjc-1295-dac'],
+    image: '/images/products/tirzepatide_10mg.webp',
   },
   {
     id: 'semaglutide',
@@ -358,6 +359,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['tirzepatide', 'retatrutide', 'ipamorelin', 'aod-9604'],
+    image: '/images/products/semaglutide_2_4mg.webp',
   },
   {
     id: 'cjc-1295-dac',
@@ -394,6 +396,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-no-dac', 'ipamorelin', 'igf-1-lr3', 'tesamorelin'],
+    image: '/images/products/cjc_1295_with_dac_2mg.webp',
   },
   {
     id: 'cjc-1295-no-dac',
@@ -428,6 +431,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-dac', 'ipamorelin', 'tesamorelin', 'igf-1-lr3'],
+    image: '/images/products/cjc_1295_no_dac_100mcg.webp',
   },
   {
     id: 'ipamorelin',
@@ -462,6 +466,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-no-dac', 'cjc-1295-dac', 'igf-1-lr3', 'tesamorelin'],
+    image: '/images/products/ipamorelin_200mcg.webp',
   },
   {
     id: 'tesamorelin',
@@ -496,6 +501,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-dac', 'ipamorelin', 'aod-9604', 'igf-1-lr3'],
+    image: '/images/products/tesamorelin_2mg.webp',
   },
   {
     id: 'aod-9604',
@@ -530,6 +536,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['semaglutide', 'tirzepatide', 'igf-1-lr3', 'mots-c'],
+    image: '/images/products/aod_9604_300mcg.webp',
   },
 
   // ── TISSUE REGENERATION & RECOVERY ────────────────────────────────────────
@@ -567,6 +574,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['tb-500', 'bpc-157', 'kpv', 'epithalon'],
+    image: '/images/products/thymosin_alpha_1_1mg.webp',
   },
   {
     id: 'epithalon',
@@ -603,6 +611,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['ghk-cu', 'tb-500', 'thymosin-alpha-1', 'dsip'],
+    image: '/images/products/epithalon_10mg.webp',
   },
 
   // ── COGNITIVE & NEUROLOGICAL ───────────────────────────────────────────────
@@ -640,6 +649,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['selank', 'dsip', 'mots-c'],
+    image: '/images/products/semax_500mcg.webp',
   },
   {
     id: 'selank',
@@ -675,6 +685,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['semax', 'dsip', 'vip'],
+    image: '/images/products/selank_500mcg.webp',
   },
   {
     id: 'dsip',
@@ -709,6 +720,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['selank', 'semax', 'epithalon'],
+    image: '/images/products/dsip_200mcg.webp',
   },
 
   // ── IMMUNE & SYSTEMIC SUPPORT ──────────────────────────────────────────────
@@ -746,6 +758,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['bpc-157', 'thymosin-alpha-1', 'vip', 'tb-500'],
+    image: '/images/products/kpv_200mcg.webp',
   },
   {
     id: 'vip',
@@ -819,6 +832,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['melanotan-i', 'pt-141', 'ghk-cu'],
+    image: '/images/products/melanotan_ii_1mg.webp',
   },
   {
     id: 'melanotan-i',
@@ -886,6 +900,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['melanotan-ii', 'melanotan-i', 'kisspeptin-10'],
+    image: '/images/products/pt_141_2mg.webp',
   },
 
   // ── METABOLIC & CELLULAR HEALTH ───────────────────────────────────────────
@@ -923,6 +938,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['igf-1-lr3', 'aod-9604', 'epithalon', 'tesamorelin'],
+    image: '/images/products/mots_c_100mcg.webp',
   },
   {
     id: 'igf-1-lr3',
@@ -958,6 +974,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-dac', 'ipamorelin', 'mots-c', 'tesamorelin'],
+    image: '/images/products/igf_1_lr3_100mcg.webp',
   },
   {
     id: 'kisspeptin-10',
@@ -992,6 +1009,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['oxytocin', 'ipamorelin', 'cjc-1295-dac'],
+    image: '/images/products/kisspeptin_10_500mcg.webp',
   },
   {
     id: 'oxytocin',
@@ -1063,7 +1081,6 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months' },
     ],
     relatedIds: ['mots-c', 'aod-9604', 'epithalon'],
-    image: '/images/products/retatrutide_10mg.webp',
   },
 
   // ── SPECIALIZED BLENDS ─────────────────────────────────────────────────────
@@ -1099,6 +1116,7 @@ export const products: Product[] = [
       { label: 'Storage', value: '-20°C (long-term)' },
     ],
     relatedIds: ['bpc-157', 'tb-500', 'thymosin-alpha-1', 'ghk-cu'],
+    image: '/images/products/wolverine_stack_10mg.webp',
   },
   {
     id: 'growth-stack',
@@ -1132,6 +1150,7 @@ export const products: Product[] = [
       { label: 'Storage', value: '-20°C (long-term)' },
     ],
     relatedIds: ['cjc-1295-no-dac', 'ipamorelin', 'cjc-1295-dac', 'igf-1-lr3'],
+    image: '/images/products/growth_stack_2mg_100mcg.webp',
   },
   {
     id: 'glow-stack',
@@ -1165,6 +1184,7 @@ export const products: Product[] = [
       { label: 'Storage', value: '-20°C (long-term)' },
     ],
     relatedIds: ['tb-500', 'bpc-157', 'ghk-cu', 'melanotan-i'],
+    image: '/images/products/glow_stack_5mg.webp',
   },
   {
     id: 'klow-stack',
@@ -1232,6 +1252,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '28 days after opening' },
     ],
     relatedIds: ['glutathione'],
+    image: '/images/products/bacteriostatic_water.webp',
   },
   {
     id: 'glutathione',
@@ -1268,6 +1289,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['epithalon', 'mots-c', 'bacteriostatic-water'],
+    image: '/images/products/glutathione_antioxidant.webp',
   },
 ];
 
