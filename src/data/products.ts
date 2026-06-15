@@ -115,7 +115,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized; 30 days reconstituted' },
     ],
     relatedIds: ['tirzepatide', 'semaglutide', 'cjc-1295-dac', 'tesamorelin'],
-    image: '/images/products/retatrutide_10mg.png',
+    image: '/images/products/retatrutide_10mg.webp',
   },
   {
     id: 'ghk-cu',
@@ -169,7 +169,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized; 14 days reconstituted' },
     ],
     relatedIds: ['bpc-157', 'tb-500', 'melanotan-ii', 'epithalon'],
-    image: '/images/products/ghk_cu_50mg.png',
+    image: '/images/products/ghk_cu_50mg.webp',
   },
   {
     id: 'bpc-157',
@@ -223,7 +223,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized; 30 days reconstituted' },
     ],
     relatedIds: ['tb-500', 'ghk-cu', 'thymosin-alpha-1', 'kpv'],
-    image: '/images/products/bpc_157_10mg.png',
+    image: '/images/products/bpc_157_10mg.webp',
   },
   {
     id: 'tb-500',
@@ -277,7 +277,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized; 30 days reconstituted' },
     ],
     relatedIds: ['bpc-157', 'ghk-cu', 'thymosin-alpha-1', 'epithalon'],
-    image: '/images/products/tb_500_10mg.png',
+    image: '/images/products/tb_500_10mg.webp',
   },
 
   // ── WEIGHT MANAGEMENT & METABOLIC ─────────────────────────────────────────
