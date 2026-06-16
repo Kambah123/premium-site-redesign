@@ -92,8 +92,8 @@ function ProductCard({
               </h3>
               <span className="text-gold-500 text-sm font-mono">{product.dosage}</span>
             </div>
-            <span className="bg-white/5 text-white/50 text-[10px] font-mono tracking-wider uppercase px-2 py-1 rounded-full border border-white/10">
-              Research
+            <span className="bg-white/5 text-gold-400 font-bold text-sm tracking-wider px-2 py-1 rounded-full border border-white/10">
+              ${product.price?.toFixed(2) || '199.99'}
             </span>
           </div>
           <p className="text-white/40 text-sm leading-relaxed mb-4 line-clamp-2">
@@ -101,7 +101,7 @@ function ProductCard({
           </p>
           <div className="flex items-center justify-between">
             <Link
-              to={`/products/${product.id}`}
+              to={`/marketplace/${product.id}`}
               className="text-gold-500 text-sm font-medium inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all"
             >
               Learn More
