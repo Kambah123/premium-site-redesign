@@ -1,11 +1,14 @@
 import { useParams, Link, Navigate } from 'react-router';
-import { ArrowLeft, FlaskConical, ShieldCheck, BookOpen, ExternalLink } from 'lucide-react';
+import { ArrowLeft, FlaskConical, ShieldCheck, BookOpen, ExternalLink, Plus, Minus, ShoppingCart } from 'lucide-react';
+import { useState } from 'react';
+import { useParams, Link, Navigate } from 'react-router';
 import Navbar from '../sections/Navbar';
 import Footer from '../sections/Footer';
 import WhatsAppFloat from '../sections/WhatsAppFloat';
 import { getProductById, getRelatedProducts, CATEGORY_COLORS } from '../data/products';
 import COASection from '../components/COASection';
 import { getCOAByProductId } from '../data/coaData';
+import { useInquiry } from '../context/InquiryContext';
 
 const WHATSAPP_URL =
   "https://wa.me/61489995818??text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides.";
@@ -13,11 +16,25 @@ const WHATSAPP_URL =
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const product = id ? getProductById(id) : undefined;
+  const { addItem } = useInquiry();
+  const [quantity, setQuantity] = useState(1);
+  const [addedToInquiry, setAddedToInquiry] = useState(false);
 
   if (!product) return <Navigate to="/library" replace />;
 
   const related = getRelatedProducts(product.relatedIds).slice(0, 4);
   const categoryColor = CATEGORY_COLORS[product.category];
+
+  const handleAddToInquiry = () => {
+    addItem({
+      productId: product.id,
+      productName: product.name,
+      dosage: product.dosage,
+      quantity,
+    });
+    setAddedToInquiry(true);
+    setTimeout(() => setAddedToInquiry(false), 2000);
+  };
 
   return (
     <div className="min-h-screen bg-pearl-white text-navy-900 font-sans">
@@ -76,18 +93,52 @@ export default function ProductDetail() {
                 ))}
               </div>
 
+              {/* Quantity Selector */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center border border-navy-900/20 rounded-lg">
+                  <button
+                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    className="p-2 hover:bg-navy-900/5 transition-colors"
+                  >
+                    <Minus size={18} className="text-navy-900/60" />
+                  </button>
+                  <input
+                    type="number"
+                    value={quantity}
+                    onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                    className="w-16 text-center border-0 focus:outline-none text-navy-900 font-semibold"
+                    min="1"
+                  />
+                  <button
+                    onClick={() => setQuantity(quantity + 1)}
+                    className="p-2 hover:bg-navy-900/5 transition-colors"
+                  >
+                    <Plus size={18} className="text-navy-900/60" />
+                  </button>
+                </div>
+                <span className="text-navy-900/60 text-sm">Vials</span>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={handleAddToInquiry}
+                  className={`flex items-center justify-center gap-2 py-4 text-base font-medium rounded-lg transition-all duration-300 flex-1 ${
+                    addedToInquiry
+                      ? 'bg-green-500 text-white'
+                      : 'bg-gold-500 text-navy-900 hover:bg-gold-600'
+                  }`}
+                >
+                  <ShoppingCart size={18} />
+                  {addedToInquiry ? 'Added to Inquiry!' : 'Add to Inquiry'}
+                </button>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary text-center py-4 text-base"
+                  className="btn-secondary text-center py-4 text-base"
                 >
-                  Inquire via WhatsApp
+                  Direct Inquiry
                 </a>
-                <button className="btn-secondary flex items-center justify-center gap-2 py-4 text-base">
-                  Technical Data Sheet <ExternalLink size={16} />
-                </button>
               </div>
             </div>
 
