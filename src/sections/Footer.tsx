@@ -61,44 +61,17 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <span className="text-lg">
                   <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                    <rect width="20" height="14" fill="#012169" />
-                    <path
-                      d="M0 0L8 7M0 7L8 0"
-                      stroke="white"
-                      strokeWidth="1.5"
-                    />
-                    <path d="M0 0L8 7M0 7L8 0" stroke="#C8102E" strokeWidth="0.8" />
-                    <rect x="8" y="0" width="12" height="14" fill="#012169" />
-                    <rect x="9" y="1" width="1" height="1" fill="white" />
-                    <rect x="11" y="1" width="1" height="1" fill="white" />
-                    <rect x="13" y="1" width="1" height="1" fill="white" />
-                    <rect x="15" y="1" width="1" height="1" fill="white" />
-                    <rect x="17" y="1" width="1" height="1" fill="white" />
-                    <rect x="10" y="3" width="1" height="1" fill="white" />
-                    <rect x="12" y="3" width="1" height="1" fill="white" />
-                    <rect x="14" y="3" width="1" height="1" fill="white" />
-                    <rect x="16" y="3" width="1" height="1" fill="white" />
-                    <rect x="18" y="3" width="1" height="1" fill="white" />
-                    <rect x="9" y="5" width="1" height="1" fill="white" />
-                    <rect x="11" y="5" width="1" height="1" fill="white" />
-                    <rect x="13" y="5" width="1" height="1" fill="white" />
-                    <rect x="15" y="5" width="1" height="1" fill="white" />
-                    <rect x="17" y="5" width="1" height="1" fill="white" />
-                    <rect x="10" y="7" width="1" height="1" fill="white" />
-                    <rect x="12" y="7" width="1" height="1" fill="white" />
-                    <rect x="14" y="7" width="1" height="1" fill="white" />
-                    <rect x="16" y="7" width="1" height="1" fill="white" />
-                    <rect x="18" y="7" width="1" height="1" fill="white" />
-                    <rect x="9" y="9" width="1" height="1" fill="white" />
-                    <rect x="11" y="9" width="1" height="1" fill="white" />
-                    <rect x="13" y="9" width="1" height="1" fill="white" />
-                    <rect x="15" y="9" width="1" height="1" fill="white" />
-                    <rect x="17" y="9" width="1" height="1" fill="white" />
-                    <rect x="10" y="11" width="1" height="1" fill="white" />
-                    <rect x="12" y="11" width="1" height="1" fill="white" />
-                    <rect x="14" y="11" width="1" height="1" fill="white" />
-                    <rect x="16" y="11" width="1" height="1" fill="white" />
-                    <rect x="18" y="11" width="1" height="1" fill="white" />
+                    <rect width="20" height="14" fill="#00008B" />
+                    <path d="M0 0L8 7M0 7L8 0" stroke="white" strokeWidth="1" />
+                    <path d="M0 0L8 7M0 7L8 0" stroke="#C8102E" strokeWidth="0.5" />
+                    <path d="M4 0L4 7M0 3.5L8 3.5" stroke="white" strokeWidth="0.8" />
+                    <circle cx="15" cy="3" r="0.7" fill="white" />
+                    <circle cx="16" cy="5" r="0.6" fill="white" />
+                    <circle cx="17" cy="4" r="0.6" fill="white" />
+                    <circle cx="18" cy="6" r="0.6" fill="white" />
+                    <circle cx="16" cy="10" r="0.5" fill="white" />
+                    <circle cx="17" cy="11" r="0.5" fill="white" />
+                    <circle cx="18" cy="10" r="0.5" fill="white" />
                   </svg>
                 </span>
                 <span className="text-navy-900/50 text-xs">Australia</span>

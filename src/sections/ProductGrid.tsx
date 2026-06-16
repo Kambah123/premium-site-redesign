@@ -172,7 +172,7 @@ export default function ProductGrid() {
           <div className="flex items-center gap-2 mb-4">
             <span className="w-2 h-2 bg-gold-500 rounded-full" />
             <span className="text-navy-800/60 text-xs font-mono tracking-[0.2em] uppercase">
-              Featured Compounds
+              Marketplace
             </span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
