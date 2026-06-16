@@ -233,13 +233,10 @@ export default function Library() {
                     )}
                   </div>
 
-                  {/* Name + Dosage */}
+                  {/* Name */}
                   <h3 className="text-white text-base font-semibold group-hover:text-gold-400 transition-colors mb-1 leading-snug">
                     {product.name}
                   </h3>
-                  {product.featured && (
-                    <span className="text-gold-500 text-xs font-mono mb-3">{product.dosage}</span>
-                  )}
 
                   {/* Tagline */}
                   <p className="text-white/40 text-xs leading-relaxed flex-1 mb-4 line-clamp-2">
