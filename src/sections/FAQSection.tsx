@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const faqs = [
   {
@@ -47,7 +48,7 @@ function FAQItem({
 }) {
   return (
     <div
-      className="border-b border-white/5 last:border-b-0"
+      className="border-b border-navy-900/5 last:border-b-0"
       style={{
         animationDelay: `${index * 0.1}s`,
       }}
@@ -58,7 +59,7 @@ function FAQItem({
       >
         <span
           className={`text-base font-medium transition-colors duration-300 pr-4 ${
-            isOpen ? 'text-gold-400' : 'text-white/80 group-hover:text-white'
+            isOpen ? 'text-gold-600' : 'text-navy-900/70 group-hover:text-navy-900'
           }`}
         >
           {faq.question}
@@ -77,7 +78,7 @@ function FAQItem({
           opacity: isOpen ? 1 : 0,
         }}
       >
-        <p className="text-white/50 text-sm leading-relaxed pb-5">
+        <p className="text-navy-900/50 text-sm leading-relaxed pb-5">
           {faq.answer}
         </p>
       </div>
@@ -86,6 +87,7 @@ function FAQItem({
 }
 
 export default function FAQSection() {
+  const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -108,7 +110,7 @@ export default function FAQSection() {
     <section
       id="faq"
       ref={sectionRef}
-      className="bg-clinical-dark py-20 lg:py-28"
+      className="bg-pearl-white py-20 lg:py-28"
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="max-w-3xl mx-auto">
@@ -124,17 +126,17 @@ export default function FAQSection() {
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="w-2 h-2 bg-gold-500 rounded-full" />
               <span className="text-gold-500 text-xs font-mono tracking-[0.2em] uppercase">
-                FAQ
+                {t.faqLabel}
               </span>
             </div>
-            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold">
-              Common Questions
+            <h2 className="text-navy-900 text-3xl sm:text-4xl lg:text-5xl font-semibold">
+              {t.faqTitle}
             </h2>
           </div>
 
           {/* FAQ List */}
           <div
-            className="bg-navy-900/30 border border-white/5 rounded-xl px-6 sm:px-8"
+            className="bg-white border border-navy-900/5 rounded-xl px-6 sm:px-8 shadow-xs"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? 'translateY(0)' : 'translateY(30px)',

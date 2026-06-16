@@ -74,7 +74,7 @@ export default function StatsGrid() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-clinical-white py-20 lg:py-28">
+    <section ref={sectionRef} className="bg-pearl-shimmer py-20 lg:py-28 border-y border-navy-900/5">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat, i) => (

@@ -23,11 +23,11 @@ export default function KnowledgeBaseCTA() {
     <section
       id="library"
       ref={sectionRef}
-      className="bg-clinical-dark py-20 lg:py-28"
+      className="bg-navy-900 py-20 lg:py-28"
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div
-          className="relative bg-navy-900/50 border border-white/5 rounded-3xl overflow-hidden"
+          className="relative bg-navy-800/50 border border-white/5 rounded-3xl overflow-hidden"
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? 'translateY(0)' : 'translateY(30px)',
@@ -89,7 +89,7 @@ export default function KnowledgeBaseCTA() {
                 </svg>
               </Link>
               <a
-                href="https://wa.me/61489995818??text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides."
+                href="https://wa.me/61489995818?text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"

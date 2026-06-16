@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { useLanguage } from '../context/LanguageContext';
 
 const exploreLinks = [
   { label: 'Peptide Library', href: '/library', isRoute: true },
@@ -14,6 +15,7 @@ const legalLinks = [
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer id="contact" className="bg-white border-t border-navy-900/5">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
@@ -51,10 +53,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-navy-900/40 text-sm leading-relaxed mb-4 max-w-xs">
-              Biogenix Labs supplies research-grade peptide compounds to academic
-              institutions and qualified researchers in Australia and
-              Bangladesh. All products are intended strictly for in-vitro and
-              laboratory research.
+              {t.footerDesc}
             </p>
             <div className="flex items-center gap-4">
               {/* Australia Flag */}
@@ -92,7 +91,7 @@ export default function Footer() {
           {/* Explore Column */}
           <div>
             <h4 className="text-navy-900 font-semibold text-sm tracking-wider uppercase mb-4">
-              Explore
+              {t.explore}
             </h4>
             <ul className="space-y-3">
               {exploreLinks.map((link) => (
@@ -114,7 +113,7 @@ export default function Footer() {
           {/* Legal Column */}
           <div>
             <h4 className="text-navy-900 font-semibold text-sm tracking-wider uppercase mb-4">
-              Legal
+              {t.legal}
             </h4>
             <ul className="space-y-3">
               {legalLinks.map((link) => (
@@ -140,7 +139,7 @@ export default function Footer() {
             </a>
             <div className="mt-4">
               <a
-                href="https://wa.me/61489995818??text=Hi%2C%20I'm%20interested%20in%20Biogenix%20Labs%20peptides."
+                href="https://wa.me/61489995818?text=Hi%2C%20I'm%20interested%20in%20Biogenix%20Labs%20peptides."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-navy-900/60 hover:text-gold-500 text-sm transition-colors"
@@ -160,7 +159,7 @@ export default function Footer() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <span className="text-navy-900/30 text-[10px] font-mono tracking-[0.2em] uppercase font-bold">
-              FOR RESEARCH PURPOSES ONLY &middot; NOT FOR HUMAN CONSUMPTION
+              {t.complianceBanner}
             </span>
             <span className="text-navy-900/30 text-xs font-mono">
               &copy; {new Date().getFullYear()} Biogenix Labs

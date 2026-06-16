@@ -12,7 +12,7 @@ import WhatsAppFloat from '../sections/WhatsAppFloat';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#F4F4F3] text-[#111111] font-sans">
+    <div className="min-h-screen bg-pearl-white text-navy-900 font-sans">
       <Navbar />
       <HeroSection />
       <MarqueeStrip />

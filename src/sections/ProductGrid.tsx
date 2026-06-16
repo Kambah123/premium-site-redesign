@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router';
 import { featuredProducts } from '../data/products';
-
-
+import { useLanguage } from '../context/LanguageContext';
 
 function ProductCard({
   product,
@@ -38,8 +37,8 @@ function ProductCard({
     const y = (e.clientY - rect.top) / rect.height - 0.5;
 
     setTilt({
-      x: y * -12,
-      y: x * 12,
+      x: y * -8,
+      y: x * 8,
     });
   }, []);
 
@@ -51,7 +50,7 @@ function ProductCard({
     <Link
       ref={cardRef}
       to={`/products/${product.id}`}
-      className="preserve-3d relative block bg-navy-900/40 rounded-xl overflow-hidden border border-white/5 transition-all duration-300 hover:border-gold-500/30 hover:shadow-gold group cursor-pointer"
+      className="preserve-3d relative block bg-white rounded-2xl overflow-hidden border border-navy-900/5 transition-all duration-300 hover:border-gold-500/30 hover:shadow-xl hover:shadow-navy-900/5 group cursor-pointer"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -61,43 +60,44 @@ function ProductCard({
       }}
     >
       {/* Product Image */}
-      <div className="relative aspect-square overflow-hidden bg-gradient-to-b from-navy-800/50 to-navy-900/80">
+      <div className="relative aspect-square overflow-hidden bg-gradient-to-b from-pearl-shimmer/50 to-white p-6">
         <img
-          src={product.image}
-          alt={`${product.name} ${product.dosage}`}
+          src={product.image || '/images/products/retatrutide_10mg.webp'}
+          alt={product.name}
+          loading="lazy"
           className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
         />
         {/* Badge */}
         {product.badge && (
-          <div className="absolute top-3 left-3 bg-gold-500/90 text-navy-900 text-[10px] font-mono font-medium tracking-wider uppercase px-2.5 py-1 rounded-full">
+          <div className="absolute top-3 left-3 bg-gold-500 text-white text-[10px] font-mono font-medium tracking-wider uppercase px-2.5 py-1 rounded-full">
             {product.badge}
           </div>
         )}
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent opacity-60" />
       </div>
 
       {/* Product Info */}
       <div className="p-5">
         <div className="flex items-start justify-between mb-2">
           <div>
-            <h3 className="text-white text-lg font-semibold group-hover:text-gold-400 transition-colors">
+            <h3 className="text-navy-900 text-lg font-semibold group-hover:text-gold-600 transition-colors">
               {product.name}
             </h3>
+            <p className="text-gold-600 text-xs font-mono mt-0.5">{product.dosage}</p>
           </div>
-          <span className="bg-white/5 text-white/50 text-[10px] font-mono tracking-wider uppercase px-2 py-1 rounded-full border border-white/10">
+          <span className="bg-navy-900/5 text-navy-900/40 text-[10px] font-mono tracking-wider uppercase px-2 py-1 rounded-full border border-navy-900/10">
             Research
           </span>
         </div>
-        <p className="text-white/40 text-sm leading-relaxed mb-4 line-clamp-2">
-          {product.description}
+        <p className="text-navy-900/40 text-sm leading-relaxed mb-4 line-clamp-2">
+          {product.tagline}
         </p>
-        <div className="flex items-center justify-end mt-2">
+        <div className="flex items-center justify-between mt-2">
+          <span className="text-gold-600 text-xs font-medium group-hover:underline">View Details →</span>
           <a
-            href="https://wa.me/61489995818??text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides."
+            href="https://wa.me/61489995818?text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides."
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/30 hover:text-gold-400 transition-colors"
+            className="text-navy-900/20 hover:text-gold-500 transition-colors"
             onClick={(e) => e.stopPropagation()}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -111,6 +111,7 @@ function ProductCard({
 }
 
 export default function ProductGrid() {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(false);
 
@@ -132,7 +133,7 @@ export default function ProductGrid() {
     <section
       id="products"
       ref={sectionRef}
-      className="bg-clinical-white py-20 lg:py-28"
+      className="bg-pearl-white py-20 lg:py-28"
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
@@ -146,21 +147,21 @@ export default function ProductGrid() {
         >
           <div className="flex items-center gap-2 mb-4">
             <span className="w-2 h-2 bg-gold-500 rounded-full" />
-            <span className="text-navy-800/60 text-xs font-mono tracking-[0.2em] uppercase">
-              Marketplace
+            <span className="text-navy-900/40 text-xs font-mono tracking-[0.2em] uppercase">
+              {t.marketplaceLabel}
             </span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <h2 className="text-navy-900 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
-              Flagship Research
+              {t.marketplaceTitle1}
               <br />
-              Peptides
+              {t.marketplaceTitle2}
             </h2>
             <Link
               to="/library"
-              className="inline-flex items-center gap-2 text-navy-800 hover:text-gold-500 text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-navy-900/60 hover:text-gold-600 text-sm font-medium transition-colors"
             >
-              View all products
+              {t.viewAllProducts}
               <svg
                 width="16"
                 height="16"
@@ -178,7 +179,7 @@ export default function ProductGrid() {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProducts.map((product, i) => (
             <ProductCard key={product.id} product={product} index={i} />
           ))}

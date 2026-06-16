@@ -176,7 +176,7 @@ export const products: Product[] = [
     name: 'BPC-157',
     dosage: '10 mg',
     category: 'Tissue Regeneration & Recovery',
-    featured: true,
+    featured: false,
     badge: 'COA Verified',
     tagline: 'Gastric-derived pentadecapeptide for systemic repair research',
     description:
@@ -230,7 +230,7 @@ export const products: Product[] = [
     name: 'TB-500',
     dosage: '10 mg',
     category: 'Tissue Regeneration & Recovery',
-    featured: true,
+    featured: false,
     badge: 'COA Verified',
     tagline: 'Thymosin Beta-4 fragment for actin regulation research',
     description:
@@ -279,6 +279,59 @@ export const products: Product[] = [
     relatedIds: ['bpc-157', 'ghk-cu', 'thymosin-alpha-1', 'epithalon'],
     image: '/images/products/tb_500_10mg.webp',
   },
+  {
+    id: 'bpc-tb-blend',
+    name: 'BPC-157 / TB-500 Blend',
+    dosage: '10 mg / 10 mg',
+    category: 'Tissue Regeneration & Recovery',
+    featured: true,
+    badge: 'COA Verified',
+    tagline: 'Combined tissue repair vial — BPC-157 and TB-500 in a single preparation',
+    description:
+      'This combined formulation pairs BPC-157 (Body Protection Compound-157) and TB-500 (Thymosin Beta-4 fragment) in a single vial, delivering two of the most extensively researched tissue-repair peptides in one convenient preparation. BPC-157 drives angiogenesis and gastrointestinal-mediated repair while TB-500 facilitates cell migration and systemic anti-inflammatory pathways.',
+    mechanism: [
+      'BPC-157 promotes angiogenesis through upregulation of VEGFR2 expression and nitric oxide signalling, ensuring adequate nutrient and oxygen delivery to damaged tissues. It also modulates growth factors including EGF, FGF, and HGF.',
+      'TB-500 binds to G-actin with high affinity, regulating actin polymerisation and facilitating efficient cell migration to sites of injury. It also activates the PI3K/Akt signalling pathway for cell survival.',
+      'The combined protocol addresses multiple repair phases simultaneously: TB-500 facilitating cell migration and initial injury response while BPC-157 supports sustained vascular and tissue remodeling across multiple organ systems.',
+    ],
+    researchFindings: [
+      {
+        title: 'Synergistic Tissue Repair Mechanisms',
+        source: 'Multiple peer-reviewed sources',
+        year: '2015-2023',
+        summary: 'Individual mechanistic research supports complementary and potentially synergistic tissue repair activity across tendon, muscle, ligament, and gastrointestinal tissue models.',
+      },
+      {
+        title: 'BPC-157 Tendon Healing',
+        source: 'Journal of Physiology (Paris), 2014',
+        year: '2014',
+        summary: 'BPC-157 significantly accelerated tendon healing in rat models, with histological analysis showing improved collagen organisation.',
+      },
+      {
+        title: 'TB-4 in Cardiac Repair',
+        source: 'Circulation, 2010',
+        year: '2010',
+        summary: 'TB-4 treatment following myocardial infarction in mouse models resulted in significant improvements in cardiac function and reduced infarct size.',
+      },
+    ],
+    applications: [
+      'Comprehensive musculoskeletal repair research',
+      'Synergistic peptide combination protocols',
+      'Tendon and ligament healing investigations',
+      'Gastrointestinal mucosal protection studies',
+      'Cardioprotective and anti-inflammatory research',
+    ],
+    specifications: [
+      { label: 'Components', value: 'BPC-157 (10 mg) + TB-500 (10 mg)' },
+      { label: 'Purity (each)', value: '≥99% (HPLC verified)' },
+      { label: 'Form', value: 'Lyophilized powder (single vial)' },
+      { label: 'Storage', value: '-20°C (long-term); 2-8°C (short-term)' },
+      { label: 'Reconstitution', value: 'Bacteriostatic water' },
+      { label: 'Shelf Life', value: '24 months lyophilized; 30 days reconstituted' },
+    ],
+    relatedIds: ['bpc-157', 'tb-500', 'ghk-cu', 'thymosin-alpha-1'],
+    image: '/images/products/bpc_tb_blend.png',
+  },
 
   // ── WEIGHT MANAGEMENT & METABOLIC ─────────────────────────────────────────
   {
@@ -322,6 +375,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['semaglutide', 'retatrutide', 'aod-9604', 'cjc-1295-dac'],
+    image: '/images/products/tirzepatide_10mg.webp',
   },
   {
     id: 'semaglutide',
@@ -358,6 +412,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['tirzepatide', 'retatrutide', 'ipamorelin', 'aod-9604'],
+    image: '/images/products/semaglutide_2_4mg.webp',
   },
   {
     id: 'cjc-1295-dac',
@@ -394,6 +449,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-no-dac', 'ipamorelin', 'igf-1-lr3', 'tesamorelin'],
+    image: '/images/products/cjc_1295_with_dac_2mg.webp',
   },
   {
     id: 'cjc-1295-no-dac',
@@ -428,6 +484,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-dac', 'ipamorelin', 'tesamorelin', 'igf-1-lr3'],
+    image: '/images/products/cjc_1295_no_dac_100mcg.webp',
   },
   {
     id: 'ipamorelin',
@@ -462,6 +519,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-no-dac', 'cjc-1295-dac', 'igf-1-lr3', 'tesamorelin'],
+    image: '/images/products/ipamorelin_200mcg.webp',
   },
   {
     id: 'tesamorelin',
@@ -496,6 +554,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-dac', 'ipamorelin', 'aod-9604', 'igf-1-lr3'],
+    image: '/images/products/tesamorelin_2mg.webp',
   },
   {
     id: 'aod-9604',
@@ -530,6 +589,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['semaglutide', 'tirzepatide', 'igf-1-lr3', 'mots-c'],
+    image: '/images/products/aod_9604_300mcg.webp',
   },
 
   // ── TISSUE REGENERATION & RECOVERY ────────────────────────────────────────
@@ -567,6 +627,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['tb-500', 'bpc-157', 'kpv', 'epithalon'],
+    image: '/images/products/thymosin_alpha_1_1mg.webp',
   },
   {
     id: 'epithalon',
@@ -603,6 +664,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['ghk-cu', 'tb-500', 'thymosin-alpha-1', 'dsip'],
+    image: '/images/products/epithalon_10mg.webp',
   },
 
   // ── COGNITIVE & NEUROLOGICAL ───────────────────────────────────────────────
@@ -640,6 +702,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['selank', 'dsip', 'mots-c'],
+    image: '/images/products/semax_500mcg.webp',
   },
   {
     id: 'selank',
@@ -675,6 +738,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['semax', 'dsip', 'vip'],
+    image: '/images/products/selank_500mcg.webp',
   },
   {
     id: 'dsip',
@@ -709,6 +773,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['selank', 'semax', 'epithalon'],
+    image: '/images/products/dsip_200mcg.webp',
   },
 
   // ── IMMUNE & SYSTEMIC SUPPORT ──────────────────────────────────────────────
@@ -746,6 +811,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['bpc-157', 'thymosin-alpha-1', 'vip', 'tb-500'],
+    image: '/images/products/kpv_200mcg.webp',
   },
   {
     id: 'vip',
@@ -781,6 +847,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['kpv', 'selank', 'bpc-157', 'thymosin-alpha-1'],
+    image: '/images/products/vip.png',
   },
 
   // ── APPEARANCE & SKIN HEALTH ───────────────────────────────────────────────
@@ -819,6 +886,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['melanotan-i', 'pt-141', 'ghk-cu'],
+    image: '/images/products/melanotan_ii_1mg.webp',
   },
   {
     id: 'melanotan-i',
@@ -852,6 +920,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['melanotan-ii', 'ghk-cu'],
+    image: '/images/products/melanotan_ii_1mg.webp',
   },
   {
     id: 'pt-141',
@@ -886,6 +955,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['melanotan-ii', 'melanotan-i', 'kisspeptin-10'],
+    image: '/images/products/pt_141_2mg.webp',
   },
 
   // ── METABOLIC & CELLULAR HEALTH ───────────────────────────────────────────
@@ -923,6 +993,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['igf-1-lr3', 'aod-9604', 'epithalon', 'tesamorelin'],
+    image: '/images/products/mots_c_100mcg.webp',
   },
   {
     id: 'igf-1-lr3',
@@ -958,6 +1029,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['cjc-1295-dac', 'ipamorelin', 'mots-c', 'tesamorelin'],
+    image: '/images/products/igf_1_lr3_100mcg.webp',
   },
   {
     id: 'kisspeptin-10',
@@ -992,6 +1064,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['oxytocin', 'ipamorelin', 'cjc-1295-dac'],
+    image: '/images/products/kisspeptin_10_500mcg.webp',
   },
   {
     id: 'oxytocin',
@@ -1028,6 +1101,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['kisspeptin-10', 'vip', 'selank'],
+    image: '/images/products/oxytocin.png',
   },
   {
     id: '5-amino-1mq',
@@ -1099,6 +1173,7 @@ export const products: Product[] = [
       { label: 'Storage', value: '-20°C (long-term)' },
     ],
     relatedIds: ['bpc-157', 'tb-500', 'thymosin-alpha-1', 'ghk-cu'],
+    image: '/images/products/wolverine_stack_10mg.webp',
   },
   {
     id: 'growth-stack',
@@ -1132,6 +1207,7 @@ export const products: Product[] = [
       { label: 'Storage', value: '-20°C (long-term)' },
     ],
     relatedIds: ['cjc-1295-no-dac', 'ipamorelin', 'cjc-1295-dac', 'igf-1-lr3'],
+    image: '/images/products/growth_stack_2mg_100mcg.webp',
   },
   {
     id: 'glow-stack',
@@ -1165,6 +1241,7 @@ export const products: Product[] = [
       { label: 'Storage', value: '-20°C (long-term)' },
     ],
     relatedIds: ['tb-500', 'bpc-157', 'ghk-cu', 'melanotan-i'],
+    image: '/images/products/glow_stack_5mg.webp',
   },
   {
     id: 'klow-stack',
@@ -1197,6 +1274,7 @@ export const products: Product[] = [
       { label: 'Storage', value: '-20°C (long-term)' },
     ],
     relatedIds: ['tb-500', 'bpc-157', 'ghk-cu', 'kpv'],
+    image: '/images/products/klow_stack.png',
   },
 
   // ── SUPPORTIVE PRODUCTS ────────────────────────────────────────────────────
@@ -1232,6 +1310,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '28 days after opening' },
     ],
     relatedIds: ['glutathione'],
+    image: '/images/products/bacteriostatic_water.webp',
   },
   {
     id: 'glutathione',
@@ -1268,6 +1347,7 @@ export const products: Product[] = [
       { label: 'Shelf Life', value: '24 months lyophilized' },
     ],
     relatedIds: ['epithalon', 'mots-c', 'bacteriostatic-water'],
+    image: '/images/products/glutathione_antioxidant.webp',
   },
 ];
 

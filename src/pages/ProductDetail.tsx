@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, FlaskConical, ShieldCheck, BookOpen, Plus, Minus, ShoppingCart } from 'lucide-react';
 import { useState } from 'react';
 import Navbar from '../sections/Navbar';
@@ -37,6 +38,12 @@ export default function ProductDetail() {
 
   return (
     <div className="min-h-screen bg-pearl-white text-navy-900 font-sans">
+      <Helmet>
+        <title>{product.name} | Biogenix Labs</title>
+        <meta name="description" content={product.tagline} />
+        {product.image && <meta property="og:image" content={`https://biogenixlabs.health${product.image}`} />}
+      </Helmet>
+
       <Navbar />
 
       {/* ── Breadcrumb ────────────────────────────────── */}
@@ -327,7 +334,7 @@ export default function ProductDetail() {
                 >
                   <div className="aspect-square rounded-xl bg-pearl-shimmer/30 mb-6 overflow-hidden flex items-center justify-center p-4">
                     {rel.image ? (
-                      <img src={rel.image} alt={rel.name} className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110" />
+                      <img src={rel.image} alt={rel.name} loading="lazy" className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110" />
                     ) : (
                       <FlaskConical size={40} className="text-gold-500/20" />
                     )}

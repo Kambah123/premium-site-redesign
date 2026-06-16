@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Download, FileText } from 'lucide-react';
 import Navbar from '../sections/Navbar';
 import Footer from '../sections/Footer';
@@ -20,6 +21,10 @@ export default function COADetailPage() {
 
   return (
     <div className="min-h-screen bg-clinical-dark text-white font-sans">
+      <Helmet>
+        <title>Certificate of Analysis - {product.name} | Biogenix Labs</title>
+        <meta name="description" content={`View the HPLC purity report and Certificate of Analysis for ${product.name}.`} />
+      </Helmet>
       <Navbar />
 
       {/* ── Breadcrumb ────────────────────────────────── */}

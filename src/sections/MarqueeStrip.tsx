@@ -14,7 +14,7 @@ export default function MarqueeStrip() {
   const allItems = [...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems];
 
   return (
-    <div className="relative z-20 bg-[#111111]/5 border-y border-[#111111]/10 overflow-hidden py-3">
+    <div className="relative z-20 bg-pearl-shimmer border-y border-navy-900/5 overflow-hidden py-3">
       <div className="flex animate-marquee whitespace-nowrap">
         {allItems.map((item, i) => (
           <span key={i} className="flex items-center mx-4">

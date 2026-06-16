@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
-
+import { useLanguage } from '../context/LanguageContext';
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -26,35 +27,37 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F4F4F3]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-pearl-white"
     >
+      {/* Subtle radial accent */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        style={{ backgroundImage: 'radial-gradient(circle at 50% 40%, #D4AF37 0%, transparent 60%)' }}
+      />
+
       {/* Content */}
       <div
         ref={contentRef}
         className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20"
       >
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 border border-[#111111]/10 rounded-full px-4 py-1.5 mb-8 bg-white/50 backdrop-blur-sm">
+        <div className="inline-flex items-center gap-2 border border-navy-900/10 rounded-full px-4 py-1.5 mb-8 bg-white/60 backdrop-blur-sm">
           <span className="w-1.5 h-1.5 bg-gold-500 rounded-full animate-pulse" />
-          <span className="text-[#111111]/80 text-xs font-mono tracking-[0.2em] uppercase">
+          <span className="text-navy-900/60 text-xs font-mono tracking-[0.2em] uppercase">
             Biogenix Labs &middot; Research Peptides
           </span>
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[84px] font-semibold text-[#111111] leading-[0.95] tracking-tight mb-6">
-          PREMIUM
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[84px] font-semibold text-navy-900 leading-[0.95] tracking-tight mb-6">
+          {t.heroTitle1}
           <br />
-          RESEARCH
-          <br />
-          <span className="text-gradient-gold">PEPTIDES.</span>
+          <span className="text-gradient-gold">{t.heroTitle2}</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-[#4A4A4A] text-base sm:text-lg md:text-xl font-light max-w-xl mx-auto mb-10 leading-relaxed">
-          Biogenix Labs supplies research-grade peptides to qualified researchers
-          across Australia and Bangladesh. HPLC-verified purity. Transparent
-          specifications. Rigorous compliance.
+        <p className="text-navy-900/50 text-base sm:text-lg md:text-xl font-light max-w-xl mx-auto mb-10 leading-relaxed">
+          {t.heroSubtitle}
         </p>
 
         {/* CTA Buttons */}
@@ -79,7 +82,7 @@ export default function HeroSection() {
           </a>
           <a
             href="#about"
-            className="border border-[#111111]/20 text-[#111111] font-medium px-8 py-3 rounded-pill transition-all duration-300 bg-transparent hover:bg-[#111111]/5 hover:border-[#111111]/30 text-sm sm:text-base"
+            className="border border-navy-900/20 text-navy-900 font-medium px-8 py-3 rounded-pill transition-all duration-300 bg-transparent hover:bg-navy-900/5 hover:border-navy-900/30 text-sm sm:text-base"
           >
             View Analysis
           </a>
@@ -91,25 +94,25 @@ export default function HeroSection() {
             <div className="text-gold-500 text-2xl sm:text-3xl font-semibold">
               99%
             </div>
-            <div className="text-[#4A4A4A]/60 text-[10px] sm:text-xs font-mono tracking-wider uppercase mt-1">
+            <div className="text-navy-900/40 text-[10px] sm:text-xs font-mono tracking-wider uppercase mt-1">
               Purity
             </div>
           </div>
-          <div className="w-px h-10 bg-[#111111]/10" />
+          <div className="w-px h-10 bg-navy-900/10" />
           <div className="text-center">
             <div className="text-gold-500 text-2xl sm:text-3xl font-semibold">
               36+
             </div>
-            <div className="text-[#4A4A4A]/60 text-[10px] sm:text-xs font-mono tracking-wider uppercase mt-1">
+            <div className="text-navy-900/40 text-[10px] sm:text-xs font-mono tracking-wider uppercase mt-1">
               Compounds
             </div>
           </div>
-          <div className="w-px h-10 bg-[#111111]/10" />
+          <div className="w-px h-10 bg-navy-900/10" />
           <div className="text-center">
             <div className="text-gold-500 text-2xl sm:text-3xl font-semibold">
               HPLC
             </div>
-            <div className="text-[#4A4A4A]/60 text-[10px] sm:text-xs font-mono tracking-wider uppercase mt-1">
+            <div className="text-navy-900/40 text-[10px] sm:text-xs font-mono tracking-wider uppercase mt-1">
               Tested
             </div>
           </div>
@@ -117,7 +120,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F4F4F3] to-transparent z-[3]" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-pearl-white to-transparent z-[3]" />
     </section>
   );
 }
