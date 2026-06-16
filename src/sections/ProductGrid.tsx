@@ -100,9 +100,9 @@ function ProductCard({
           <p className="text-white/40 text-sm leading-relaxed mb-4 line-clamp-2">
             {product.description}
           </p>
-          <div className="flex items-center justify-between">
-            <div className="text-gold-500 text-sm font-medium inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
-              Technical Specs
+          <div className="flex items-center justify-between mt-2">
+            <div className="text-gold-500/0 text-xs font-medium inline-flex items-center gap-1.5 group-hover:text-gold-500 group-hover:gap-2.5 transition-all">
+              View Technical Specs
               <svg
                 width="14"
                 height="14"
