@@ -1,7 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router';
-import { ArrowLeft, FlaskConical, ShieldCheck, BookOpen, ExternalLink, Plus, Minus, ShoppingCart } from 'lucide-react';
+import { ArrowLeft, FlaskConical, ShieldCheck, BookOpen, Plus, Minus, ShoppingCart } from 'lucide-react';
 import { useState } from 'react';
-import { useParams, Link, Navigate } from 'react-router';
 import Navbar from '../sections/Navbar';
 import Footer from '../sections/Footer';
 import WhatsAppFloat from '../sections/WhatsAppFloat';
