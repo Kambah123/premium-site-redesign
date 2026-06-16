@@ -100,22 +100,7 @@ function ProductCard({
           <p className="text-white/40 text-sm leading-relaxed mb-4 line-clamp-2">
             {product.description}
           </p>
-          <div className="flex items-center justify-between mt-2">
-            <div className="text-gold-500/0 text-xs font-medium inline-flex items-center gap-1.5 group-hover:text-gold-500 group-hover:gap-2.5 transition-all">
-              View Technical Specs
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </div>
+          <div className="flex items-center justify-end mt-2">
             <a
               href="https://wa.me/61489995818??text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Biogenix%20Labs%20peptides."
               target="_blank"
