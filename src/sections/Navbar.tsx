@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router';
+import { useCart } from '../context/CartContext';
+import CartDrawer from '../components/CartDrawer';
 import { Search, ShoppingCart, Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: '/', isRoute: true },
-  { label: 'Products', href: '/library', isRoute: true },
-  { label: 'Research', href: '/#about', isRoute: false },
-  { label: 'FAQ', href: '/#faq', isRoute: false },
+  { label: 'Marketplace', href: '/marketplace', isRoute: true },
+  { label: 'Library', href: '/library', isRoute: true },
+  { label: 'COA Library', href: '/#about', isRoute: false },
   { label: 'Contact', href: '/#contact', isRoute: false },
 ];
 
 export default function Navbar() {
+  const { totalItems, setIsCartOpen } = useCart();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
@@ -24,7 +27,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
+    <>
+      <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-white/90 backdrop-blur-xl border-b border-navy-900/5 shadow-sm'
@@ -102,11 +106,16 @@ export default function Navbar() {
             <button className={`${scrolled ? 'text-navy-900/70' : 'text-[#111111]/70'} hover:text-gold-500 transition-colors p-2`}>
               <Search size={20} />
             </button>
-            <button className={`${scrolled ? 'text-navy-900/70' : 'text-[#111111]/70'} hover:text-gold-500 transition-colors p-2 relative`}>
+            <button
+              className={`${scrolled ? 'text-navy-900/70' : 'text-[#111111]/70'} hover:text-gold-500 transition-colors p-2 relative`}
+              onClick={() => setIsCartOpen(true)}
+            >
               <ShoppingCart size={20} />
-              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-gold-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-gold-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
             </button>
 
             {/* WhatsApp CTA */}
@@ -173,5 +182,7 @@ export default function Navbar() {
         )}
       </div>
     </nav>
+      <CartDrawer />
+    </>
   );
 }

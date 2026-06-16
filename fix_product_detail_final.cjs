@@ -1,6 +1,14 @@
-import { useParams, Link, Navigate } from 'react-router';
+const fs = require('fs');
+
+const file = 'src/pages/ProductDetail.tsx';
+let code = fs.readFileSync(file, 'utf-8');
+
+// I can see the previous replace didn't work because the hero code is probably gone or malformed.
+// Since we have a backup of the original `src/pages/ProductDetail.tsx` in my history, I will rewrite the file cleanly from scratch.
+
+const newCode = `import { useParams, Link, Navigate } from 'react-router';
 import { useState } from 'react';
-import { FlaskConical, ShieldCheck, BookOpen, Plus, Minus, ShoppingBag } from 'lucide-react';
+import { ArrowLeft, FlaskConical, ShieldCheck, BookOpen, ExternalLink, Plus, Minus, ShoppingBag } from 'lucide-react';
 import Navbar from '../sections/Navbar';
 import Footer from '../sections/Footer';
 import WhatsAppFloat from '../sections/WhatsAppFloat';
@@ -66,9 +74,9 @@ export default function ProductDetail() {
                     <button
                       key={i}
                       onClick={() => setActiveImage(i)}
-                      className={`aspect-square bg-white border rounded-xl p-2 flex items-center justify-center transition-all ${activeImage === i ? 'border-gold-500 shadow-sm' : 'border-navy-900/10 hover:border-navy-900/30'}`}
+                      className={\`aspect-square bg-white border rounded-xl p-2 flex items-center justify-center transition-all \${activeImage === i ? 'border-gold-500 shadow-sm' : 'border-navy-900/10 hover:border-navy-900/30'}\`}
                     >
-                      <img src={img} alt={`${product.name} view ${i+1}`} className="w-full h-full object-contain mix-blend-multiply" />
+                      <img src={img} alt={\`\${product.name} view \${i+1}\`} className="w-full h-full object-contain mix-blend-multiply" />
                     </button>
                   ))}
                 </div>
@@ -78,7 +86,7 @@ export default function ProductDetail() {
             {/* Product Info & Purchase Actions */}
             <div className="flex flex-col h-full lg:py-8">
               <div className="mb-6">
-                <span className={`text-[10px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-full border inline-block mb-6 shadow-sm bg-white ${CATEGORY_COLORS[product.category]}`}>
+                <span className={\`text-[10px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-full border inline-block mb-6 shadow-sm bg-white \${CATEGORY_COLORS[product.category]}\`}>
                   {product.category.split(' ')[0]}
                 </span>
                 <h1 className="text-4xl lg:text-6xl font-bold text-navy-900 mb-4 leading-tight tracking-tight">
@@ -90,7 +98,7 @@ export default function ProductDetail() {
 
               <div className="mb-10 pb-10 border-b border-navy-900/10">
                 <div className="flex items-center gap-6 mb-6">
-                  <span className="text-4xl font-bold text-navy-900">${product.price?.toFixed(2) || '199.99'}</span>
+                  <span className="text-4xl font-bold text-navy-900">\${product.price?.toFixed(2) || '199.99'}</span>
                   <span className="text-navy-900/40 text-sm font-medium px-3 py-1 bg-navy-900/5 rounded-full">HPLC Verified ≥99%</span>
                 </div>
 
@@ -273,7 +281,7 @@ export default function ProductDetail() {
               {related.map((rel) => (
                 <Link
                   key={rel.id}
-                  to={`/marketplace/${rel.id}`}
+                  to={\`/marketplace/\${rel.id}\`}
                   className="group bg-white border border-navy-900/5 hover:border-gold-500/30 rounded-2xl p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-navy-900/5"
                 >
                   <div className="aspect-square rounded-xl bg-pearl-shimmer/30 mb-6 overflow-hidden flex items-center justify-center p-4">
@@ -283,7 +291,7 @@ export default function ProductDetail() {
                       <FlaskConical size={40} className="text-gold-500/20" />
                     )}
                   </div>
-                  <span className={`text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border inline-block mb-4 ${CATEGORY_COLORS[rel.category]}`}>
+                  <span className={\`text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border inline-block mb-4 \${CATEGORY_COLORS[rel.category]}\`}>
                     {rel.category.split(' ')[0]}
                   </span>
                   <h3 className="text-navy-900 text-lg font-bold group-hover:text-gold-600 transition-colors mb-2">
@@ -302,3 +310,6 @@ export default function ProductDetail() {
     </div>
   );
 }
+`;
+
+fs.writeFileSync(file, newCode, 'utf-8');

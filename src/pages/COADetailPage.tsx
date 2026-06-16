@@ -30,7 +30,7 @@ export default function COADetailPage() {
             <span>/</span>
             <Link to="/library" className="hover:text-gold-400 transition-colors">Library</Link>
             <span>/</span>
-            <Link to={`/products/${productId}`} className="hover:text-gold-400 transition-colors">{product.name}</Link>
+            <Link to={`/marketplace/${productId}`} className="hover:text-gold-400 transition-colors">{product.name}</Link>
             <span>/</span>
             <span className="text-white/70">Certificate of Analysis</span>
           </div>
@@ -41,7 +41,7 @@ export default function COADetailPage() {
       <section className="bg-gradient-to-b from-navy-900/60 to-clinical-dark pt-10 pb-16">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
           <Link
-            to={`/products/${productId}`}
+            to={`/marketplace/${productId}`}
             className="inline-flex items-center gap-2 text-white/40 hover:text-gold-400 text-sm transition-colors mb-8"
           >
             <ArrowLeft size={14} /> Back to Product
