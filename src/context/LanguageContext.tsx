@@ -1,12 +1,12 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
-export type Lang = 'en' | 'bn';
+export type Lang = 'en' | 'bn' | 'hi';
 
 export interface Translations {
   // Navbar
   home: string;
-  products: string;
-  research: string;
+  products: string; // Will act as Marketplace
+  research: string; // Will act as Library
   faq: string;
   contact: string;
   whatsappInquiry: string;
@@ -78,8 +78,8 @@ export interface Translations {
 
 const en: Translations = {
   home: 'Home',
-  products: 'Products',
-  research: 'Research',
+  products: 'Marketplace',
+  research: 'Library',
   faq: 'FAQ',
   contact: 'Contact',
   whatsappInquiry: 'WhatsApp Inquiry',
@@ -148,75 +148,145 @@ const en: Translations = {
 
 const bn: Translations = {
   home: 'হোম',
-  products: 'পণ্যসমূহ',
-  research: 'গবেষণা',
+  products: 'মার্কেটপ্লেস',
+  research: 'লাইব্রেরি',
   faq: 'সাধারণ প্রশ্ন',
   contact: 'যোগাযোগ',
-  whatsappInquiry: 'হোয়াটসঅ্যাপ অনুসন্ধান',
+  whatsappInquiry: 'হোয়াটসঅ্যাপ মেসেজ',
 
-  heroTitle1: 'গবেষণা-গ্রেড পেপটাইড।',
-  heroTitle2: 'যাচাইকৃত বিশুদ্ধতা।',
+  heroTitle1: 'সেরা মানের পেপটাইড।',
+  heroTitle2: '১০০% খাঁটি।',
   heroSubtitle:
-    'বায়োজেনিক্স ল্যাবস অস্ট্রেলিয়া, বাংলাদেশ, পাকিস্তান এবং মার্কিন যুক্তরাষ্ট্র জুড়ে যোগ্য গবেষকদের জন্য HPLC-যাচাইকৃত গবেষণা পেপটাইড সরবরাহ করে। স্বচ্ছ স্পেসিফিকেশন। বিশ্লেষণের সার্টিফিকেট অন্তর্ভুক্ত।',
+    'বায়োজেনিক্স ল্যাবস গবেষকদের জন্য আসল এবং ল্যাব-টেস্টেড পেপটাইড সাপ্লাই দেয়। প্রতিটি প্রোডাক্টের সাথে ল্যাব রিপোর্ট পাবেন।',
 
   marketplaceLabel: 'মার্কেটপ্লেস',
-  marketplaceTitle1: 'প্রধান গবেষণা',
+  marketplaceTitle1: 'প্রধান রিসার্চ',
   marketplaceTitle2: 'পেপটাইড',
-  viewAllProducts: 'সকল পণ্য দেখুন',
+  viewAllProducts: 'সব প্রোডাক্ট দেখুন',
 
   aboutLabel: 'বায়োজেনিক্স ল্যাবস সম্পর্কে',
-  aboutTitle1: 'নির্মিত',
-  aboutTitle2: 'বৈজ্ঞানিক নিষ্ঠার জন্য',
+  aboutTitle1: 'বিজ্ঞানের',
+  aboutTitle2: 'সেরা মানের জন্য',
   aboutP1:
-    'বায়োজেনিক্স ল্যাবস হল একটি গবেষণা-গ্রেড পেপটাইড সরবরাহকারী যা অস্ট্রেলিয়া এবং বাংলাদেশ জুড়ে শিক্ষাপ্রতিষ্ঠান, পরীক্ষাগার এবং যোগ্য গবেষকদের সেবা প্রদান করে।',
+    'বায়োজেনিক্স ল্যাবস গবেষক এবং ল্যাবরেটরির জন্য অরিজিনাল পেপটাইড সাপ্লাই করে থাকে।',
   aboutP2:
-    'আমাদের ফোকাস হল বিজ্ঞান — সামঞ্জস্যপূর্ণ, উচ্চ-বিশুদ্ধতার গবেষণা উপাদান প্রদান করা যা পুনরুত্পাদনযোগ্য পরীক্ষা-নিরীক্ষাকে সমর্থন করে।',
+    'আমাদের মূল লক্ষ্য হলো সঠিক এবং ১০০% খাঁটি রিসার্চ ম্যাটেরিয়াল দেওয়া, যাতে আপনাদের কাজে কোনো সমস্যা না হয়।',
 
-  complianceBanner: 'শুধুমাত্র গবেষণার উদ্দেশ্যে — মানব ব্যবহারের জন্য নয়',
+  complianceBanner: 'শুধুমাত্র গবেষণার জন্য — মানুষের ব্যবহারের জন্য নয়',
   complianceBody:
-    'বায়োজেনিক্স ল্যাবসের সকল পণ্য কঠোরভাবে ইন-ভিট্রো এবং পরীক্ষাগার গবেষণা ব্যবহারের জন্য। মানব বা পশুচিকিৎসা প্রশাসনের জন্য নয়।',
-  researchOnly: 'শুধুমাত্র গবেষণার উদ্দেশ্যে · মানব ব্যবহারের জন্য নয়',
+    'আমাদের সব প্রোডাক্ট শুধু ল্যাবরেটরি এবং গবেষণার জন্য। এগুলো মানুষ বা কোনো প্রাণীর উপর ব্যবহার করা যাবে না।',
+  researchOnly: 'শুধু গবেষণার জন্য · মানুষের ব্যবহারের জন্য নয়',
 
   faqLabel: 'সাধারণ প্রশ্ন',
-  faqTitle: 'সচরাচর জিজ্ঞাসিত প্রশ্ন',
+  faqTitle: 'সচরাচর জিজ্ঞাসা',
 
   footerDesc:
-    'বায়োজেনিক্স ল্যাবস অস্ট্রেলিয়া এবং বাংলাদেশে শিক্ষাপ্রতিষ্ঠান এবং যোগ্য গবেষকদের জন্য গবেষণা-গ্রেড পেপটাইড যৌগ সরবরাহ করে।',
+    'বায়োজেনিক্স ল্যাবস গবেষকদের জন্য আসল এবং ল্যাব-টেস্টেড পেপটাইড সাপ্লাই দেয়।',
   explore: 'অন্বেষণ',
-  legal: 'আইনি',
-  termsOfService: 'সেবার শর্তাবলী',
-  privacyPolicy: 'গোপনীয়তা নীতি',
-  researchDisclaimer: 'গবেষণা ব্যবহার দাবিত্যাগ',
+  legal: 'আইনি তথ্য',
+  termsOfService: 'শর্তাবলী',
+  privacyPolicy: 'গোপনীয়তা নীতি',
+  researchDisclaimer: 'গবেষণা সতর্কীকরণ',
   peptideLibrary: 'পেপটাইড লাইব্রেরি',
-  featuredProducts: 'বৈশিষ্ট্যযুক্ত পণ্য',
+  featuredProducts: 'বিশেষ প্রোডাক্ট',
 
-  overview: 'সংক্ষিপ্ত বিবরণ',
-  mechanismOfAction: 'কর্ম প্রক্রিয়া',
-  researchFindings: 'গবেষণার ফলাফল',
-  potentialApplications: 'সম্ভাব্য গবেষণা প্রয়োগ',
-  fullSpecifications: 'সম্পূর্ণ স্পেসিফিকেশন',
-  requestLabReport: 'সম্পূর্ণ ল্যাব রিপোর্ট অনুরোধ',
-  addToInquiry: 'অনুসন্ধানে যোগ করুন',
-  addedToInquiry: 'অনুসন্ধানে যোগ হয়েছে!',
-  directInquiry: 'সরাসরি অনুসন্ধান',
-  backToLibrary: '← লাইব্রেরিতে ফিরুন',
+  overview: 'বিস্তারিত',
+  mechanismOfAction: 'কীভাবে কাজ করে',
+  researchFindings: 'রিসার্চের ফলাফল',
+  potentialApplications: 'ব্যবহারের উপায়',
+  fullSpecifications: 'সব বিবরণ',
+  requestLabReport: 'ল্যাব রিপোর্ট চান',
+  addToInquiry: 'লিস্টে যোগ করুন',
+  addedToInquiry: 'লিস্টে যোগ করা হয়েছে!',
+  directInquiry: 'সরাসরি জিজ্ঞাসা',
+  backToLibrary: '← লাইব্রেরিতে ফিরে যান',
 
   libraryTitle1: 'পেপটাইড',
-  libraryTitle2: 'জ্ঞানভাণ্ডার',
+  libraryTitle2: 'নলেজ বেস',
   librarySubtitle:
-    'আমাদের সম্পূর্ণ গবেষণা-গ্রেড যৌগের লাইব্রেরি ব্রাউজ করুন। প্রতিটি এন্ট্রিতে কর্ম প্রক্রিয়া, গবেষণার ফলাফল এবং সম্পূর্ণ স্পেসিফিকেশন অন্তর্ভুক্ত।',
-  searchPeptides: 'পেপটাইড অনুসন্ধান করুন...',
-  cantFind: 'আপনার প্রয়োজনীয় পণ্য খুঁজে পাচ্ছেন না?',
+    'আমাদের সব রিসার্চ-গ্রেড পেপটাইডের লিস্ট। এখানে আপনি প্রতিটি প্রোডাক্টের কাজ এবং সব রিপোর্ট দেখতে পারবেন।',
+  searchPeptides: 'পেপটাইড খুঁজুন...',
+  cantFind: 'যা খুঁজছেন তা পাচ্ছেন না?',
   cantFindDesc:
-    'প্রাপ্যতা, কাস্টম পরিমাণ বা এখনও তালিকাভুক্ত নয় এমন যৌগ নিয়ে আলোচনা করতে হোয়াটসঅ্যাপের মাধ্যমে আমাদের গবেষণা দলের সাথে যোগাযোগ করুন।',
-  inquireVia: 'হোয়াটসঅ্যাপে অনুসন্ধান করুন',
+    'স্টক, কাস্টম অর্ডার বা অন্য কোনো প্রোডাক্টের জন্য আমাদের টিমের সাথে সরাসরি হোয়াটসঅ্যাপে কথা বলুন।',
+  inquireVia: 'হোয়াটসঅ্যাপে মেসেজ দিন',
 
-  currency: 'মুদ্রা',
+  currency: 'কারেন্সি',
 
-  testimonialLabel: 'গবেষকরা কী বলেন',
+  testimonialLabel: 'গবেষকরা যা বলেন',
 };
 
-const dictionaries: Record<Lang, Translations> = { en, bn };
+const hi: Translations = {
+  home: 'होम',
+  products: 'मार्केटप्लेस',
+  research: 'लाइब्रेरी',
+  faq: 'सामान्य प्रश्न',
+  contact: 'संपर्क करें',
+  whatsappInquiry: 'व्हाट्सएप पूछताछ',
+
+  heroTitle1: 'रिसर्च-ग्रेड पेप्टाइड्स।',
+  heroTitle2: '100% शुद्धता।',
+  heroSubtitle:
+    'बायोजेनिक्स लैब्स शोधकर्ताओं के लिए सर्वोत्तम गुणवत्ता वाले पेप्टाइड्स प्रदान करता है। हर प्रोडक्ट के साथ आपको लैब रिपोर्ट मिलेगी।',
+
+  marketplaceLabel: 'मार्केटप्लेस',
+  marketplaceTitle1: 'प्रमुख रिसर्च',
+  marketplaceTitle2: 'पेप्टाइड्स',
+  viewAllProducts: 'सभी प्रोडक्ट देखें',
+
+  aboutLabel: 'बायोजेनिक्स लैब्स के बारे में',
+  aboutTitle1: 'वैज्ञानिक',
+  aboutTitle2: 'सटीकता के लिए',
+  aboutP1:
+    'बायोजेनिक्स लैब्स एक रिसर्च-ग्रेड पेप्टाइड सप्लायर है जो प्रयोगशालाओं और शोधकर्ताओं को सेवा प्रदान करता है।',
+  aboutP2:
+    'हमारा ध्यान आपको बेहतरीन और 100% शुद्ध सामग्री देने पर है।',
+
+  complianceBanner: 'केवल रिसर्च के लिए - मानव उपयोग के लिए नहीं',
+  complianceBody:
+    'बायोजेनिक्स लैब्स के सभी प्रोडक्ट केवल प्रयोगशाला रिसर्च के लिए हैं। इन्हें मानव या पशुओं पर इस्तेमाल नहीं किया जाना चाहिए।',
+  researchOnly: 'केवल रिसर्च के लिए · मानव उपयोग के लिए नहीं',
+
+  faqLabel: 'सामान्य प्रश्न',
+  faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+
+  footerDesc:
+    'बायोजेनिक्स लैब्स प्रयोगशालाओं और शोधकर्ताओं को रिसर्च-ग्रेड पेप्टाइड्स प्रदान करता है।',
+  explore: 'खोजें',
+  legal: 'कानूनी जानकारी',
+  termsOfService: 'सेवा की शर्तें',
+  privacyPolicy: 'गोपनीयता नीति',
+  researchDisclaimer: 'रिसर्च उपयोग अस्वीकरण',
+  peptideLibrary: 'पेप्टाइड लाइब्रेरी',
+  featuredProducts: 'प्रमुख प्रोडक्ट',
+
+  overview: 'विवरण',
+  mechanismOfAction: 'कार्य करने का तरीका',
+  researchFindings: 'रिसर्च के परिणाम',
+  potentialApplications: 'संभावित उपयोग',
+  fullSpecifications: 'पूरी जानकारी',
+  requestLabReport: 'पूरी लैब रिपोर्ट मांगें',
+  addToInquiry: 'पूछताछ में जोड़ें',
+  addedToInquiry: 'पूछताछ में जोड़ा गया!',
+  directInquiry: 'सीधी पूछताछ',
+  backToLibrary: '← लाइब्रेरी में वापस जाएँ',
+
+  libraryTitle1: 'पेप्टाइड',
+  libraryTitle2: 'जानकारी',
+  librarySubtitle:
+    'रिसर्च-ग्रेड कंपाउंड्स की हमारी पूरी लाइब्रेरी देखें। हर प्रोडक्ट के काम करने का तरीका और लैब रिपोर्ट यहाँ मौजूद है।',
+  searchPeptides: 'पेप्टाइड खोजें...',
+  cantFind: 'आपको जो चाहिए वो नहीं मिल रहा?',
+  cantFindDesc:
+    'कस्टम ऑर्डर या स्टॉक के बारे में बात करने के लिए हमारी टीम से व्हाट्सएप पर संपर्क करें।',
+  inquireVia: 'व्हाट्सएप पर पूछें',
+
+  currency: 'मुद्रा',
+
+  testimonialLabel: 'शोधकर्ताओं की राय',
+};
+
+const dictionaries: Record<Lang, Translations> = { en, bn, hi };
 
 interface LanguageContextValue {
   lang: Lang;

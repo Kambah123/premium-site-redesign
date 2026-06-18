@@ -1,7 +1,9 @@
 import Navbar from '../sections/Navbar';
 import HeroSection from '../sections/HeroSection';
+import StockHighlightsSection from '../sections/StockHighlightsSection';
 import MarqueeStrip from '../sections/MarqueeStrip';
 import StatsGrid from '../sections/StatsGrid';
+import InteractivePeptideFinder from '../sections/InteractivePeptideFinder';
 import ProductGrid from '../sections/ProductGrid';
 import AboutSection from '../sections/AboutSection';
 import ComplianceSection from '../sections/ComplianceSection';
@@ -15,8 +17,10 @@ export default function Home() {
     <div className="min-h-screen bg-pearl-white text-navy-900 font-sans">
       <Navbar />
       <HeroSection />
+      <StockHighlightsSection />
       <MarqueeStrip />
       <StatsGrid />
+      <InteractivePeptideFinder />
       <ProductGrid />
       <AboutSection />
       <ComplianceSection />

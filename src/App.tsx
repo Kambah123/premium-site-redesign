@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
+const Marketplace = lazy(() => import('./pages/Marketplace'));
 const Library = lazy(() => import('./pages/Library'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
 const COADetailPage = lazy(() => import('./pages/COADetailPage'));
@@ -27,6 +28,7 @@ function App() {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/library" element={<Library />} />
           <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/coa/:productId" element={<COADetailPage />} />

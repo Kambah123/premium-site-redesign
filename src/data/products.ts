@@ -1349,6 +1349,43 @@ export const products: Product[] = [
     relatedIds: ['epithalon', 'mots-c', 'bacteriostatic-water'],
     image: '/images/products/glutathione_antioxidant.webp',
   },
+  {
+    id: 'hgh',
+    name: 'HGH',
+    dosage: '100 IU',
+    category: 'Featured',
+    featured: true,
+    tagline: 'Somatropin for advanced regenerative and metabolic research',
+    description:
+      'Human Growth Hormone (HGH), or Somatropin, is a 191-amino acid, single-chain polypeptide identical to the naturally occurring hormone produced by the anterior pituitary gland. It is a fundamental compound in research regarding tissue regeneration, metabolic regulation, and anti-aging.',
+    mechanism: [
+      'HGH exerts its effects both directly by binding to the growth hormone receptor (GHR) on target cells and indirectly by stimulating the liver and other tissues to produce insulin-like growth factor 1 (IGF-1).',
+      'It stimulates protein synthesis, promotes lipolysis by increasing the activity of hormone-sensitive lipase, and regulates carbohydrate metabolism.',
+    ],
+    researchFindings: [
+      {
+        title: 'HGH in Tissue Regeneration',
+        source: 'Journal of Endocrinological Investigation',
+        year: '2020',
+        summary: 'Exogenous HGH administration significantly accelerated wound healing and stimulated chondrocyte proliferation in ex-vivo models.',
+      },
+    ],
+    applications: [
+      'Tissue regeneration and repair',
+      'Metabolic regulation studies',
+      'Anti-aging and longevity research',
+      'IGF-1 pathway investigations',
+    ],
+    specifications: [
+      { label: 'Purity', value: '≥99% (HPLC verified)' },
+      { label: 'Sequence', value: '191 amino acid native sequence' },
+      { label: 'Form', value: 'Lyophilized powder' },
+      { label: 'Storage', value: '-20°C (long-term)' },
+      { label: 'Shelf Life', value: '24 months lyophilized' },
+    ],
+    relatedIds: ['igf-1-lr3', 'cjc-1295-dac', 'ipamorelin'],
+    image: '/images/products/hgh.png',
+  },
 ];
 
 export const featuredProducts = products.filter((p) => p.featured);

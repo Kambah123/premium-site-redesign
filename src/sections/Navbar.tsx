@@ -13,6 +13,7 @@ const currencies = [
 const languages: { code: Lang; label: string }[] = [
   { code: 'en', label: 'English' },
   { code: 'bn', label: 'বাংলা' },
+  { code: 'hi', label: 'हिन्दी' },
 ];
 
 export default function Navbar() {
@@ -26,10 +27,10 @@ export default function Navbar() {
 
   const navLinks = [
     { label: t.home, href: '/', isRoute: true },
-    { label: t.products, href: '/library', isRoute: true },
-    { label: t.research, href: '/#about', isRoute: false },
+    { label: t.products, href: '/marketplace', isRoute: true },
+    { label: t.research, href: '/library', isRoute: true },
     { label: t.faq, href: '/#faq', isRoute: false },
-    { label: t.contact, href: '/#contact', isRoute: false },
+    { label: t.contact, href: 'https://wa.me/61489995818?text=Hi%2C%20I\'m%20interested%20in%20Biogenix%20Labs%20peptides.', isRoute: false },
   ];
 
   useEffect(() => {
@@ -114,7 +115,14 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={(e) => { e.preventDefault(); navigate(link.href); }}
+                  onClick={(e) => { 
+                    if (!link.href.startsWith('http')) {
+                      e.preventDefault(); 
+                      navigate(link.href); 
+                    }
+                  }}
+                  target={link.href.startsWith('http') ? "_blank" : undefined}
+                  rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
                   className={`${scrolled ? 'text-navy-900/70' : 'text-[#111111]/70'} hover:text-gold-500 text-sm font-medium transition-colors duration-300 relative group`}
                 >
                   {link.label}
@@ -137,7 +145,7 @@ export default function Navbar() {
                 }`}
               >
                 <Globe size={13} />
-                {lang === 'en' ? 'EN' : 'বাং'}
+                {lang === 'en' ? 'EN' : lang === 'bn' ? 'বাং' : 'हिं'}
                 <ChevronDown size={11} />
               </button>
               {showLangDropdown && (
@@ -240,8 +248,15 @@ export default function Navbar() {
                   <a
                     key={link.label}
                     href={link.href}
+                    target={link.href.startsWith('http') ? "_blank" : undefined}
+                    rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
                     className="text-navy-900/70 hover:text-gold-500 text-base font-medium transition-colors py-2 px-2"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => {
+                      if (link.href.startsWith('http')) return;
+                      setMobileOpen(false);
+                      e.preventDefault();
+                      navigate(link.href);
+                    }}
                   >
                     {link.label}
                   </a>

@@ -158,8 +158,8 @@ export default function ProductGrid() {
               {t.marketplaceTitle2}
             </h2>
             <Link
-              to="/library"
-              className="inline-flex items-center gap-2 text-navy-900/60 hover:text-gold-600 text-sm font-medium transition-colors"
+              to="/marketplace"
+              className="inline-flex items-center gap-2 border border-navy-900/10 hover:border-gold-500/50 bg-white hover:bg-gold-500/5 text-navy-900 px-6 py-3 rounded-full transition-all duration-300 font-medium text-sm group"
             >
               {t.viewAllProducts}
               <svg
@@ -171,6 +171,7 @@ export default function ProductGrid() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                className="group-hover:translate-x-1 transition-transform"
               >
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
