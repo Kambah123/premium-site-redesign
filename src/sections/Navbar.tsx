@@ -29,7 +29,7 @@ export default function Navbar() {
     { label: t.home, href: '/', isRoute: true },
     { label: t.products, href: '/marketplace', isRoute: true },
     { label: t.research, href: '/library', isRoute: true },
-    { label: t.faq, href: '/#faq', isRoute: false },
+    // { label: t.faq, href: '/#faq', isRoute: false },
     { label: t.contact, href: 'https://wa.me/61489995818?text=Hi%2C%20I\'m%20interested%20in%20Biogenix%20Labs%20peptides.', isRoute: false },
   ];
 

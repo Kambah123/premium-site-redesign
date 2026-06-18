@@ -8,7 +8,7 @@ import ProductGrid from '../sections/ProductGrid';
 import AboutSection from '../sections/AboutSection';
 import ComplianceSection from '../sections/ComplianceSection';
 import KnowledgeBaseCTA from '../sections/KnowledgeBaseCTA';
-import FAQSection from '../sections/FAQSection';
+// import FAQSection from '../sections/FAQSection';
 import Footer from '../sections/Footer';
 import WhatsAppFloat from '../sections/WhatsAppFloat';
 
@@ -25,7 +25,7 @@ export default function Home() {
       <AboutSection />
       <ComplianceSection />
       <KnowledgeBaseCTA />
-      <FAQSection />
+      {/* <FAQSection /> */}
       <Footer />
       <WhatsAppFloat />
     </div>
